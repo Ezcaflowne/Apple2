@@ -27,3 +27,4 @@
 -(IBAction)onClick:(id)sender;
 -(IBAction)colorSelector:(id)sender;
 -(IBAction)step:(id)sender;
+-(IBAction)onClickCalc:(id)sender;

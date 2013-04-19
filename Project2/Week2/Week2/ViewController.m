@@ -95,5 +95,58 @@
     
 }
 
+//Calc function
+-(IBAction)onClickCalc:(id)sender
+{
+    int stepNum = step.value;
+    
+    
+    // mixButton activated
+    if (mixButton.enabled == NO)
+    {
+        mixAlbum *playlistChoice = (mixAlbum*)[factory createNewMusic: MIX];
+        [playlistChoice setTracks:3];
+        [playlistChoice setPlayingTime:5];
+        
+        indieButton.enabled = true;
+        grungeButton.enabled = true;
+        
+        int totalTime = playlistChoice.tracks * playlistChoice.playingTime;
+        int playTime = playlistChoice.tracks * stepNum + totalTime;
+        int totalRemix = playlistChoice.tracks + stepNum;
+        
+        displayText.text = [NSString stringWithFormat:@"Tracks: %i. Time: %i minutes.", totalRemix, playTime];
+    }
+    else if (indieButton.enabled == NO)
+    {
+        // indieButton activated
+        indieAlbum *playlistChoice = (indieAlbum*)[factory createNewMusic:INDIE];
+        [playlistChoice setTimeForSongs:3];
+        [playlistChoice setLoadingTime:5];
+        
+        mixButton.enabled = true;
+        grungeButton.enabled = true;
+        
+        
+        int totalTime = playlistChoice.timeForSongs * playlistChoice.loadingTime;
+        int playTime = playlistChoice.timeForSongs * stepNum + totalTime;
+        int totalRemix = playlistChoice.timeForSongs + stepNum;
+        displayText.text = [NSString stringWithFormat:@"Tracks: %i. Time: %i minutes.", totalRemix, playTime];
+    }
+    else if (grungeButton.enabled == NO)
+    {
+        //grungeButton activated
+        grungeAlbum *playlistChoice = (grungeAlbum*)[factory createNewMusic:GRUNGE];
+        [playlistChoice setTimeForSongs:4];
+        [playlistChoice setLoadingTime:2];
+        mixButton.enabled = true;
+        indieButton.enabled = true;
+        
+        int totalTime = playlistChoice.timeForSongs * playlistChoice.loadingTime;
+        int playTime = playlistChoice.timeForSongs * stepNum + totalTime;
+        int totalRemix = playlistChoice.timeForSongs + stepNum;
+        displayText.text = [NSString stringWithFormat:@"Tracks: %i. Time: %i minutes.", totalRemix, playTime];
+    }
+}
 
 @end
