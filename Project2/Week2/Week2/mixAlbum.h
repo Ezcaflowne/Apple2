@@ -10,4 +10,7 @@
 
 @interface mixAlbum : base
 
+@property int tracks;
+@property int playingTime;
+
 @end

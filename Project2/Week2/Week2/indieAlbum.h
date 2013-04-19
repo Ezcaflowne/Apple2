@@ -10,4 +10,7 @@
 
 @interface indieAlbum : base
 
+@property int timeForSongs;
+@property int loadingTime;
+
 @end

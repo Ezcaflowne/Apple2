@@ -10,4 +10,26 @@
 
 @interface base : NSObject
 
+{
+    int musicEnum;
+}
+
+typedef enum
+{
+    INDIE,
+    MIX,
+    GRUNGE
+} musicEnum;
+
+//data members for song time in minutes
+
+@property NSString *albums;
+@property int songTimeMinutes;
+
+//Initalize
+-(id)init;
+
+//Calculating song time
+-(void)calculateSongTime;
+
 @end

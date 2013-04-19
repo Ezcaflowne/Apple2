@@ -10,4 +10,21 @@
 
 @implementation mixAlbum
 
+@synthesize tracks,playingTime;
+
+
+-(id)init
+{
+    self = [super init];
+    if (self != nil)
+    {
+        [self setTracks:0];
+        [self setPlayingTime:0];
+    }
+    return self;
+}
+
+-(void)calculateSongTime
+{}
+
 @end
