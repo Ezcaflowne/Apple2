@@ -51,6 +51,9 @@
 		9C8609C91720DAC80049B7A1 /* grungeAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = grungeAlbum.h; sourceTree = "<group>"; };
 		9C8609CA1720DAC80049B7A1 /* grungeAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = grungeAlbum.m; sourceTree = "<group>"; };
 		9C8609CD1720DC170049B7A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "../../../../AOC2-2/AOC2 Week2/AOC2 Week2/en.lproj/ViewController.xib"; sourceTree = "<group>"; };
+		9C8609CF1720E5970049B7A1 /* infoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = infoView.xib; path = "../../../../AOC2-2/AOC2 Week2/AOC2 Week2/infoView.xib"; sourceTree = "<group>"; };
+		9C8609D01720E5970049B7A1 /* infoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = infoViewController.h; path = "../../../../AOC Week2/AOC Week2/infoViewController.h"; sourceTree = "<group>"; };
+		9C8609D11720E5970049B7A1 /* infoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = infoViewController.m; path = "../../../../AOC Week2/AOC Week2/infoViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,9 @@
 				9C8609B41720D5D90049B7A1 /* ViewController.m */,
 				9C8609CC1720DC170049B7A1 /* ViewController.xib */,
 				9C8609A21720D5D90049B7A1 /* Supporting Files */,
+				9C8609D01720E5970049B7A1 /* infoViewController.h */,
+				9C8609D11720E5970049B7A1 /* infoViewController.m */,
+				9C8609CF1720E5970049B7A1 /* infoView.xib */,
 				9C8609BE1720D6BC0049B7A1 /* factory.h */,
 				9C8609BF1720D6BC0049B7A1 /* factory.m */,
 				9C8609C01720DA730049B7A1 /* base.h */,
