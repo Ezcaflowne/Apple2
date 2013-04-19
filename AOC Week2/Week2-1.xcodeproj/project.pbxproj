@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9C860984171F43290049B7A1 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C860982171F43290049B7A1 /* ViewController.xib */; };
-		9C860986171F43DE0049B7A1 /* infoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C860985171F43DE0049B7A1 /* infoView.xib */; };
-		9C86098A17208CEB0049B7A1 /* orngButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C86098917208CEB0049B7A1 /* orngButton.png */; };
+		9C37FEF81720F6CB00C9F79F /* infoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C37FEF71720F6CB00C9F79F /* infoView.xib */; };
+		9C37FEFA1720F6F100C9F79F /* orngButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C37FEF91720F6F100C9F79F /* orngButton.png */; };
+		9C37FEFC1720F70100C9F79F /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C37FEFB1720F70100C9F79F /* ViewController.xib */; };
+		9C37FEFE1720F72400C9F79F /* willson.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9C37FEFD1720F72400C9F79F /* willson.jpg */; };
 		9C86098C1720C8790049B7A1 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C86098B1720C8790049B7A1 /* MessageUI.framework */; };
-		9C86098E1720CA110049B7A1 /* willson.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9C86098D1720CA110049B7A1 /* willson.jpg */; };
 		9CD72ED8171D19A90018DA2C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CD72ED7171D19A90018DA2C /* UIKit.framework */; };
 		9CD72EDA171D19A90018DA2C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CD72ED9171D19A90018DA2C /* Foundation.framework */; };
 		9CD72EDC171D19A90018DA2C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CD72EDB171D19A90018DA2C /* CoreGraphics.framework */; };
@@ -31,11 +31,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9C860983171F43290049B7A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "../../AOC2-2/AOC2 Week2/AOC2 Week2/en.lproj/ViewController.xib"; sourceTree = "<group>"; };
-		9C860985171F43DE0049B7A1 /* infoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = infoView.xib; path = "../../AOC2-2/AOC2 Week2/AOC2 Week2/infoView.xib"; sourceTree = "<group>"; };
-		9C86098917208CEB0049B7A1 /* orngButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = orngButton.png; path = ../../../Downloads/orngButton.png; sourceTree = "<group>"; };
+		9C37FEF71720F6CB00C9F79F /* infoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = infoView.xib; sourceTree = "<group>"; };
+		9C37FEF91720F6F100C9F79F /* orngButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orngButton.png; sourceTree = "<group>"; };
+		9C37FEFB1720F70100C9F79F /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		9C37FEFD1720F72400C9F79F /* willson.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = willson.jpg; path = ../../../willson.jpg; sourceTree = "<group>"; };
 		9C86098B1720C8790049B7A1 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		9C86098D1720CA110049B7A1 /* willson.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = willson.jpg; path = ../../willson.jpg; sourceTree = "<group>"; };
 		9CD72ED4171D19A90018DA2C /* Week2-1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Week2-1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CD72ED7171D19A90018DA2C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9CD72ED9171D19A90018DA2C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -111,15 +111,15 @@
 		9CD72EDD171D19A90018DA2C /* Week2-1 */ = {
 			isa = PBXGroup;
 			children = (
-				9C86098D1720CA110049B7A1 /* willson.jpg */,
-				9C86098917208CEB0049B7A1 /* orngButton.png */,
+				9C37FEFD1720F72400C9F79F /* willson.jpg */,
+				9C37FEF91720F6F100C9F79F /* orngButton.png */,
 				9CD72EE6171D19A90018DA2C /* AppDelegate.h */,
 				9CD72EE7171D19A90018DA2C /* AppDelegate.m */,
 				9CD72EEF171D19A90018DA2C /* ViewController.h */,
 				9CD72EF0171D19A90018DA2C /* ViewController.m */,
-				9C860982171F43290049B7A1 /* ViewController.xib */,
+				9C37FEFB1720F70100C9F79F /* ViewController.xib */,
 				9CD72EDE171D19A90018DA2C /* Supporting Files */,
-				9C860985171F43DE0049B7A1 /* infoView.xib */,
+				9C37FEF71720F6CB00C9F79F /* infoView.xib */,
 				9CD72F00171D49570018DA2C /* infoViewController.h */,
 				9CD72F01171D49570018DA2C /* infoViewController.m */,
 				9CD72EFA171D45FB0018DA2C /* factory.h */,
@@ -206,10 +206,10 @@
 				9CD72EEA171D19A90018DA2C /* Default.png in Resources */,
 				9CD72EEC171D19A90018DA2C /* Default@2x.png in Resources */,
 				9CD72EEE171D19A90018DA2C /* Default-568h@2x.png in Resources */,
-				9C860984171F43290049B7A1 /* ViewController.xib in Resources */,
-				9C860986171F43DE0049B7A1 /* infoView.xib in Resources */,
-				9C86098A17208CEB0049B7A1 /* orngButton.png in Resources */,
-				9C86098E1720CA110049B7A1 /* willson.jpg in Resources */,
+				9C37FEF81720F6CB00C9F79F /* infoView.xib in Resources */,
+				9C37FEFA1720F6F100C9F79F /* orngButton.png in Resources */,
+				9C37FEFC1720F70100C9F79F /* ViewController.xib in Resources */,
+				9C37FEFE1720F72400C9F79F /* willson.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,14 +235,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9C860982171F43290049B7A1 /* ViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9C860983171F43290049B7A1 /* en */,
-			);
-			name = ViewController.xib;
-			sourceTree = "<group>";
-		};
 		9CD72EE0171D19A90018DA2C /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
