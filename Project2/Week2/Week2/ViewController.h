@@ -25,3 +25,5 @@
 }
 // Functions
 -(IBAction)onClick:(id)sender;
+-(IBAction)colorSelector:(id)sender;
+-(IBAction)step:(id)sender;

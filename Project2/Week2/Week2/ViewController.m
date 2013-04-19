@@ -28,7 +28,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-//Functions for buttons
+//buttons functions
 -(IBAction)onClick:(id)sender
 {
     UIButton *button = (UIButton*)sender;
@@ -54,5 +54,46 @@
         displayText.text = @"The Grunge Album is going to be played.";
     }
 }
+
+//function to change the background color
+-(IBAction)colorSelector:(id)sender
+{
+    UISegmentedControl *bgColorControl = (UISegmentedControl*)sender;
+    if (bgColorControl != nil)
+    {
+        if (bgColorControl.selectedSegmentIndex == 0)
+        {
+            self.view.backgroundColor = [UIColor brownColor];
+        }
+        else if (bgColorControl.selectedSegmentIndex == 1)
+        {
+            self.view.backgroundColor = [UIColor magentaColor];
+        }
+        else if (bgColorControl.selectedSegmentIndex == 2)
+        {
+            self.view.backgroundColor = [UIColor cyanColor];
+        }
+        else if (bgColorControl.selectedSegmentIndex == 3)
+        {
+            self.view.backgroundColor = [UIColor lightGrayColor];
+        }
+    }
+}
+
+// step controller
+-(IBAction)step:(id)sender
+{
+    
+    
+    UIStepper *stepControl = (UIStepper*)sender;
+    if (stepControl != nil)
+    {
+        int stepValue = stepControl.value;
+        
+        stepText.text = [NSString stringWithFormat:@"$%d Tip.", stepValue];
+    }
+    
+}
+
 
 @end
