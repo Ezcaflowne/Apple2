@@ -10,4 +10,18 @@
 
 @interface ViewController : UIViewController
 
-@end
+{
+    //UI buttons
+    IBOutlet UIButton *mixButton;
+    IBOutlet UIButton *indieButton;
+    IBOutlet UIButton *grungeButton;
+    IBOutlet UIButton *calcButton;
+    // Label for background color text
+    IBOutlet UILabel *stepText;
+    // Stepper
+    IBOutlet UIStepper *step;
+    // Text field
+    IBOutlet UITextField *displayText;
+}
+// Functions
+-(IBAction)onClick:(id)sender;
