@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#import <UIKit/UIKit.h>
-
 //Created a new protocal for the delegate between the addEvent and ViewController
 @protocol addEventDelegate <NSObject>
 
@@ -24,7 +22,7 @@
     // creating the delegate tag
     id<addEventDelegate>delegate;
     
-    
+
     IBOutlet UITextField *eventName;
     IBOutlet UIDatePicker *picker;
     NSDate *eventDate;

@@ -7,21 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "addEvent.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <addEventDelegate>
+
 {
+    IBOutlet UIButton *clear;
     IBOutlet UIButton *addEvent;
-    IBOutlet UIButton *clearEvent;
-    IBOutlet UITextView *listEvent;
+    IBOutlet UITextView *eventList;
     id<addEventDelegate> delegate;
 }
-
-
 
 // setting the property for the delegate
 @property(strong)id<addEventDelegate> delegate;
 
+// Button function to open addEvent view
 -(IBAction)addEventView:(id)sender;
 -(IBAction)clearList:(id)sender;
-
 @end

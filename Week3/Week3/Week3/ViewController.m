@@ -27,25 +27,27 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
 // sending to the textView from the addEvent view
 
 -(void)didSave:(NSString *)nameString
 {
     NSString *eventString = nameString;
     
-    if([listEvent.text isEqualToString:@""])
+    if([eventList.text isEqualToString:@""])
     {
-        listEvent.text = nameString;
+        eventList.text = nameString;
     }
     else
     {
-        listEvent.text = [listEvent.text stringByAppendingString:eventString];
+        eventList.text = [eventList.text stringByAppendingString:eventString];
     }
 }
 
 -(IBAction)clearList:(id)sender
 {
-    listEvent.text = @"";
+    eventList.text = @"";
 }
 
 // Button call function to open the addEvent view
@@ -55,9 +57,9 @@
     
     // Clearing out the textview
     
-    if ([listEvent.text isEqualToString:@"Dates shown here"])
+    if ([eventList.text isEqualToString:@"Dates shown here"])
     {
-        listEvent.text = @"";
+        eventList.text = @"";
     }
     if (eventInfo !=nil)
     {
@@ -67,5 +69,7 @@
         [self presentViewController:eventInfo animated:true completion:nil];
     }
 }
+
+
 
 @end
