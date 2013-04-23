@@ -24,6 +24,8 @@
 		9C526BFA172661190013023A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C526BF8172661190013023A /* InfoPlist.strings */; };
 		9C526BFD172661190013023A /* Week3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C526BFC172661190013023A /* Week3Tests.m */; };
 		9C526C07172661C10013023A /* orngButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C526C06172661C00013023A /* orngButton.png */; };
+		9C526C0A172668DE0013023A /* addEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C526C09172668DE0013023A /* addEvent.m */; };
+		9C526C0C172668FC0013023A /* addEvent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C526C0B172668FC0013023A /* addEvent.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,9 @@
 		9C526BFB172661190013023A /* Week3Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Week3Tests.h; sourceTree = "<group>"; };
 		9C526BFC172661190013023A /* Week3Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Week3Tests.m; sourceTree = "<group>"; };
 		9C526C06172661C00013023A /* orngButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = orngButton.png; path = ../../../../../.Trash/orngButton.png; sourceTree = "<group>"; };
+		9C526C08172668DE0013023A /* addEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addEvent.h; sourceTree = "<group>"; };
+		9C526C09172668DE0013023A /* addEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addEvent.m; sourceTree = "<group>"; };
+		9C526C0B172668FC0013023A /* addEvent.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = addEvent.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,12 +124,15 @@
 		9C526BD1172661180013023A /* Week3 */ = {
 			isa = PBXGroup;
 			children = (
-				9C526BDA172661180013023A /* AppDelegate.h */,
 				9C526C06172661C00013023A /* orngButton.png */,
+				9C526BDA172661180013023A /* AppDelegate.h */,
 				9C526BDB172661180013023A /* AppDelegate.m */,
 				9C526BE3172661180013023A /* ViewController.h */,
 				9C526BE4172661190013023A /* ViewController.m */,
 				9C526BE6172661190013023A /* ViewController.xib */,
+				9C526C08172668DE0013023A /* addEvent.h */,
+				9C526C09172668DE0013023A /* addEvent.m */,
+				9C526C0B172668FC0013023A /* addEvent.xib */,
 				9C526BD2172661180013023A /* Supporting Files */,
 			);
 			path = Week3;
@@ -240,6 +248,7 @@
 				9C526BE2172661180013023A /* Default-568h@2x.png in Resources */,
 				9C526BE8172661190013023A /* ViewController.xib in Resources */,
 				9C526C07172661C10013023A /* orngButton.png in Resources */,
+				9C526C0C172668FC0013023A /* addEvent.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +286,7 @@
 				9C526BD8172661180013023A /* main.m in Sources */,
 				9C526BDC172661180013023A /* AppDelegate.m in Sources */,
 				9C526BE5172661190013023A /* ViewController.m in Sources */,
+				9C526C0A172668DE0013023A /* addEvent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

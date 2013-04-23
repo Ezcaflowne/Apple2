@@ -9,9 +9,21 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-@property (retain, nonatomic) IBOutlet UIButton *addEvent;
-@property (retain, nonatomic) IBOutlet UIButton *deleteEvent;
-@property (retain, nonatomic) IBOutlet UIButton *clearEvent;
-@property (retain, nonatomic) IBOutlet UITextView *eventDisplay;
+{
+    IBOutlet UIButton *addEvent;
+    
+    IBOutlet UIButton *deleteEvent;
+    IBOutlet UIButton *clearEvent;
+    IBOutlet UITextView *listView;
+    id<addEventDelegate> delegate;
+}
+
+
+
+// setting the property for the delegate
+@property(strong)id<addEventDelegate> delegate;
+
+-(IBAction)addEventView:(id)sender;
+-(IBAction)clearList:(id)sender;
 
 @end

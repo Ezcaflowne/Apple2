@@ -27,10 +27,36 @@
 }
 
 - (void)dealloc {
-    [_addEvent release];
-    [_deleteEvent release];
-    [_clearEvent release];
-    [_eventDisplay release];
+    [addEvent release];
+    [deleteEvent release];
+    [clearEvent release];
+    [listView release];
     [super dealloc];
 }
+
+-(IBAction)clearList:(id)sender
+{
+    eventList.text = @"";
+}
+
+// Button call function to open the addEvent view
+-(IBAction)addEventView:(id)sender
+{
+    addEvent *eventInfo = [[addEvent alloc]initWithNibName:@"addEvent" bundle:nil];
+    
+    // Clearing out the textview
+    
+    if ([eventList.text isEqualToString:@"Dates shown here"])
+    {
+        eventList.text = @"";
+    }
+    if (eventInfo !=nil)
+    {
+        // calling the delegate
+        eventInfo.delegate = self;
+        
+        [self presentViewController:eventInfo animated:true completion:nil];
+    }
+}
+
 @end
