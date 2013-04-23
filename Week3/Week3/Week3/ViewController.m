@@ -7,12 +7,13 @@
 //
 
 #import "ViewController.h"
-
+#import "addEvent.h"
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
+@synthesize delegate;
 
 - (void)viewDidLoad
 {
@@ -26,17 +27,25 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)dealloc {
-    [addEvent release];
-    [deleteEvent release];
-    [clearEvent release];
-    [listView release];
-    [super dealloc];
+// sending to the textView from the addEvent view
+
+-(void)didSave:(NSString *)nameString
+{
+    NSString *eventString = nameString;
+    
+    if([listEvent.text isEqualToString:@""])
+    {
+        listEvent.text = nameString;
+    }
+    else
+    {
+        listEvent.text = [listEvent.text stringByAppendingString:eventString];
+    }
 }
 
 -(IBAction)clearList:(id)sender
 {
-    eventList.text = @"";
+    listEvent.text = @"";
 }
 
 // Button call function to open the addEvent view
@@ -46,9 +55,9 @@
     
     // Clearing out the textview
     
-    if ([eventList.text isEqualToString:@"Dates shown here"])
+    if ([listEvent.text isEqualToString:@"Dates shown here"])
     {
-        eventList.text = @"";
+        listEvent.text = @"";
     }
     if (eventInfo !=nil)
     {

@@ -11,10 +11,8 @@
 @interface ViewController : UIViewController
 {
     IBOutlet UIButton *addEvent;
-    
-    IBOutlet UIButton *deleteEvent;
     IBOutlet UIButton *clearEvent;
-    IBOutlet UITextView *listView;
+    IBOutlet UITextView *listEvent;
     id<addEventDelegate> delegate;
 }
 
