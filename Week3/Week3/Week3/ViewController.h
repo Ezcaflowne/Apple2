@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+@property (retain, nonatomic) IBOutlet UIButton *addEvent;
+@property (retain, nonatomic) IBOutlet UIButton *deleteEvent;
+@property (retain, nonatomic) IBOutlet UIButton *clearEvent;
+@property (retain, nonatomic) IBOutlet UITextView *eventDisplay;
 
 @end

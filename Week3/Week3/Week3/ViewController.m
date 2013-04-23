@@ -26,4 +26,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)dealloc {
+    [_addEvent release];
+    [_deleteEvent release];
+    [_clearEvent release];
+    [_eventDisplay release];
+    [super dealloc];
+}
 @end
