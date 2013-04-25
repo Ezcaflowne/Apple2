@@ -12,7 +12,6 @@
 @interface ViewController : UIViewController <addEventDelegate>
 
 {
-    IBOutlet UIScrollView *scrollView;
     IBOutlet UIButton *clear;
     IBOutlet UIButton *addEvent;
     IBOutlet UITextView *eventList;
