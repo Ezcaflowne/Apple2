@@ -27,6 +27,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    scrollView.contentSize = CGSizeMake(280.0f, 476.0f);
+}
 
 
 // sending to the textView from the addEvent view
