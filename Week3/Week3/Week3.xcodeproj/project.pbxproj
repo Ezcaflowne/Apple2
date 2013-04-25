@@ -22,11 +22,13 @@
 		9C526BFA172661190013023A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C526BF8172661190013023A /* InfoPlist.strings */; };
 		9C526BFD172661190013023A /* Week3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C526BFC172661190013023A /* Week3Tests.m */; };
 		9C526C07172661C10013023A /* orngButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C526C06172661C00013023A /* orngButton.png */; };
-		9C526C21172685480013023A /* Week3-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C526BD3172661180013023A /* Week3-Info.plist */; };
 		9C526C2B172689670013023A /* addEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C526C29172689660013023A /* addEvent.m */; };
 		9C526C3017268A2F0013023A /* addEvent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C526C2F17268A2F0013023A /* addEvent.xib */; };
 		9C526C3417268E4E0013023A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C526C3217268E4E0013023A /* ViewController.m */; };
 		9C526C3517268E4E0013023A /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C526C3317268E4E0013023A /* ViewController.xib */; };
+		9C526C361728C5CC0013023A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C526C3217268E4E0013023A /* ViewController.m */; };
+		9C526C371728C5D70013023A /* addEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C526C29172689660013023A /* addEvent.m */; };
+		9C526C381728CB920013023A /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C526C3317268E4E0013023A /* ViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -243,12 +245,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C526C07172661C10013023A /* orngButton.png in Resources */,
 				9C526BD6172661180013023A /* InfoPlist.strings in Resources */,
 				9C526BDE172661180013023A /* Default.png in Resources */,
 				9C526BE0172661180013023A /* Default@2x.png in Resources */,
 				9C526BE2172661180013023A /* Default-568h@2x.png in Resources */,
-				9C526C07172661C10013023A /* orngButton.png in Resources */,
-				9C526C21172685480013023A /* Week3-Info.plist in Resources */,
+				9C526C381728CB920013023A /* ViewController.xib in Resources */,
 				9C526C3017268A2F0013023A /* addEvent.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +287,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C526C371728C5D70013023A /* addEvent.m in Sources */,
+				9C526C361728C5CC0013023A /* ViewController.m in Sources */,
 				9C526BD8172661180013023A /* main.m in Sources */,
 				9C526BDC172661180013023A /* AppDelegate.m in Sources */,
 			);
