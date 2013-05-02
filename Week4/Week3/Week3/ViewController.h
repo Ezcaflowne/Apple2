@@ -13,12 +13,14 @@
 
 {
     IBOutlet UIButton *clear;
-    IBOutlet UIButton *addEvent;
     IBOutlet UITextView *eventList;
+    IBOutlet UIButton *save;
+    UISwipeGestureRecognizer *rightSwipe;
+    IBOutlet UILabel *swipeRight;
 }
 
-// Button function to open addEvent view
--(IBAction)addEventView:(id)sender;
+// Saves eventList
+-(IBAction)onSave:(id)sender;
 
 //Clears eventList
 -(IBAction)clearList:(id)sender;

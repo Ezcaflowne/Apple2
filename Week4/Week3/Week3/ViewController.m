@@ -20,7 +20,8 @@
 {
     [data CreateInfo];
     // Makeing sure eventList shows default text.
-    if([eventList.text isEqualToString:@""]){
+    if([eventList.text isEqualToString:@""])
+    {
         eventList.text = @"Dates shown here";
     }
     
@@ -40,9 +41,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewWillAppear:(BOOL)animated{
+- (void)viewWillAppear:(BOOL)animated
+{
     //check singleton for data, add to eventList if there is data.
-    if ([[data GetInfo] eventNew] == TRUE) {
+    if ([[data GetInfo] eventNew] == TRUE)
+    {
         //Pull text from eventName
         NSMutableString *viewText = [[NSMutableString alloc] initWithString:eventList.text];
         
@@ -53,6 +56,12 @@
          
     }
     
+    //Right swipe gesture recognizer
+    rightSwipe = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(onRightSwipe:)];
+    rightSwipe.direction = UISwipeGestureRecognizerDirectionRight;
+    [swipeRight addGestureRecognizer:rightSwipe];
+    
+    [super viewWillAppear:animated];
 }
 
 -(IBAction)clearList:(id)sender
@@ -60,23 +69,56 @@
     eventList.text = @"Dates shown here.";
 }
 
-// Save eventList
--(IBAction)addEventView:(id)sender
+// Saves eventList
+-(IBAction)onSave:(id)sender
 {
-    addEvent *eventInfo = [[addEvent alloc]initWithNibName:@"addEvent" bundle:nil];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    // Clearing out the textview
-    
-    if ([eventList.text isEqualToString:@"Dates shown here."])
+    if (defaults != nil)
     {
-        eventList.text = @"";
+        NSString *eventText = eventList.text;
+        [defaults setObject:eventText forKey:@"Saved"];
+        [defaults synchronize];
     }
-    if (eventInfo !=nil)
+    
+    // showing alert for saving the data
+    if([eventList.text isEqual: @"Dates shown here"])
     {
-        [self presentViewController:eventInfo animated:true completion:nil];
+        UIAlertView *emptyAlert = [[UIAlertView alloc]initWithTitle:@"Events Cleared" message:@"There are no events to save, please add an event." delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
+        [emptyAlert show];
+    }else{
+        UIAlertView *saveAlert = [[UIAlertView alloc]initWithTitle:@"Saved!" message:@"Events saved." delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
+        [saveAlert show];
+    }
+    
+}
+
+
+-(void)onRightSwipe:(UISwipeGestureRecognizer*)recognizer
+{
+    //Swipe right functions
+    if(recognizer.direction == UISwipeGestureRecognizerDirectionRight)
+    {
+        addEvent *eventInfo = [[addEvent alloc]initWithNibName:@"addEvent" bundle:nil];
+        
+        // Clearing out the textview
+        
+        if ([eventList.text isEqualToString:@"Dates shown here"])
+        {
+            eventList.text = @"";
+        }
+        if (eventInfo !=nil)
+        {
+            [self presentViewController:eventInfo animated:true completion:nil];
+        }
+        
     }
 }
 
 
-
+- (void)dealloc {
+    [rightSwipe release];
+    [rightSwipe release];
+    [super dealloc];
+}
 @end
