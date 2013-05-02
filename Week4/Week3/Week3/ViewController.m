@@ -18,6 +18,18 @@
 
 - (void)viewDidLoad
 {
+    [data CreateInfo];
+    // Makeing sure eventList shows default text.
+    if([eventList.text isEqualToString:@""]){
+        eventList.text = @"Dates shown here";
+    }
+    
+    //Loads saved events
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if (defaults != nil){
+        NSString *eventText = [defaults objectForKey:@"Saved"];
+        eventList.text = eventText;
+    }
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -28,36 +40,34 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-// sending to the textView from the addEvent view
-
--(void)didSave:(NSString *)nameString
-{
-    NSString *eventString = nameString;
+- (void)viewWillAppear:(BOOL)animated{
+    //check singleton for data, add to eventList if there is data.
+    if ([[data GetInfo] eventNew] == TRUE) {
+        //Pull text from eventName
+        NSMutableString *viewText = [[NSMutableString alloc] initWithString:eventList.text];
+        
+        //Add event name and date to eventList
+        [viewText appendString:[[data GetInfo] createEvent]];
+        //Updates data to the eventList
+        [[data GetInfo] setEventNew:FALSE];
+         
+    }
     
-    if([eventList.text isEqualToString:@""])
-    {
-        eventList.text = nameString;
-    }
-    else
-    {
-        eventList.text = [eventList.text stringByAppendingString:eventString];
-    }
 }
 
 -(IBAction)clearList:(id)sender
 {
-    eventList.text = @"";
+    eventList.text = @"Dates shown here.";
 }
 
-// Button call function to open the addEvent view
+// Save eventList
 -(IBAction)addEventView:(id)sender
 {
     addEvent *eventInfo = [[addEvent alloc]initWithNibName:@"addEvent" bundle:nil];
     
     // Clearing out the textview
     
-    if ([eventList.text isEqualToString:@"Dates shown here"])
+    if ([eventList.text isEqualToString:@"Dates shown here."])
     {
         eventList.text = @"";
     }
