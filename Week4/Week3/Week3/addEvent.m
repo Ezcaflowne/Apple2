@@ -89,4 +89,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)dealloc {
+    [keyboardLabel release];
+    [dateLabel release];
+    [swipeLeft release];
+    [close release];
+    [super dealloc];
+}
 @end

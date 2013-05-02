@@ -11,10 +11,13 @@
 
 @interface addEvent : UIViewController
 {
-    
-
+    IBOutlet UILabel *keyboardLabel;
+    IBOutlet UILabel *dateLabel;
+    IBOutlet UILabel *swipeLeft;
+    UISwipeGestureRecognizer *leftSwipe;
     IBOutlet UITextField *eventName;
     IBOutlet UIDatePicker *picker;
+    IBOutlet UIButton *close;
     NSDate *eventDate;
 }
 
