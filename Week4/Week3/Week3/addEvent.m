@@ -15,8 +15,6 @@
 
 @implementation addEvent
 
-@synthesize delegate;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -73,9 +71,6 @@
     // Setting the Date string
     NSString *formattedDateString = [formatDate stringFromDate:eventDate];
     //NSLog(@"formattedDateString: %@", formattedDateString);
-    
-    // Saving to ViewController textView
-    [delegate didSave:[NSMutableString stringWithFormat:@"New Event: %@\nDate and Time: %@\n\n",eventName.text, formattedDateString]];
     
     // telling you that the event is saved in an alert
     

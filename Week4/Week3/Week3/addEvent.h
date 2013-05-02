@@ -8,19 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-//Created a new protocal for the delegate between the addEvent and ViewController
-@protocol addEventDelegate <NSObject>
 
-@required
--(void)didSave:(NSString*)nameString;
-
-@end
-
-
-@interface addEvent : UIViewController <UITextFieldDelegate>
+@interface addEvent : UIViewController
 {
-    // creating the delegate tag
-    id<addEventDelegate>delegate;
     
 
     IBOutlet UITextField *eventName;
@@ -35,7 +25,4 @@
 -(IBAction)onSave:(id)sender;
 
 
-
-// creating a property for the delegate
-@property (strong) id<addEventDelegate>delegate;
 @end

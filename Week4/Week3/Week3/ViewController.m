@@ -8,12 +8,12 @@
 
 #import "ViewController.h"
 #import "addEvent.h"
+
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
-@synthesize delegate;
 
 - (void)viewDidLoad
 {
@@ -62,9 +62,6 @@
     }
     if (eventInfo !=nil)
     {
-        // calling the delegate
-        eventInfo.delegate = self;
-        
         [self presentViewController:eventInfo animated:true completion:nil];
     }
 }
