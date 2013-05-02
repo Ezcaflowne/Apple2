@@ -6,11 +6,9 @@
 //  Copyright (c) 2013 Willson Ayotte (NEW). All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-
 @interface addEvent : UIViewController
 {
+    
     IBOutlet UILabel *keyboardLabel;
     IBOutlet UILabel *dateLabel;
     IBOutlet UILabel *swipeLeft;
@@ -23,9 +21,6 @@
 
 // Close Keyboard button function
 -(IBAction)onClose:(id)sender;
-
-// Save Event button function
--(IBAction)onSave:(id)sender;
 
 
 @end

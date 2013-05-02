@@ -7,7 +7,7 @@
 //
 
 #import "addEvent.h"
-
+#import "data.h"
 
 @interface addEvent ()
 
@@ -24,61 +24,76 @@
     return self;
 }
 
-
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
     
     // Setting the minimum date for the picker
     picker.minimumDate = [NSDate date];
     
+    // Keyboard notification functions, willShow and willHide
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    
+    //Left swipe gesture recognizer
+    leftSwipe = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(onLeftSwipe:)];
+    leftSwipe.direction = UISwipeGestureRecognizerDirectionLeft;
+    [swipeLeft addGestureRecognizer:leftSwipe];
+    close.hidden = true;
+    keyboardLabel.hidden = true;
+    [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
 
--(void)viewWillAppear:(BOOL)animated
+// happens when keyboard appears
+-(void)keyboardWillShow:(NSNotification*)notification
 {
-        [super viewWillAppear:animated];
+    close.hidden = false;
+    keyboardLabel.hidden = false;
+    dateLabel.hidden = true;
 }
 
-// When the Close Keyboard button is pressed
+//happens when keyboard is hidden
+-(void)keyboardWillHide:(NSNotification*)notification
+{
+    close.hidden = true;
+    keyboardLabel.hidden = true;
+    dateLabel.hidden = false;
+}
 
+// Closes keyboard and hides listView because it kept wanting to pop up after I closed the keyboard.
 -(IBAction)onClose:(id)sender
 {
     [eventName resignFirstResponder];
 }
 
-
-// When save button is clicked it populates the ViewController textView with the new event name and date w/time. 
-
--(IBAction)onSave:(id)sender
+// All this happens when the left swipe is activated.
+-(void)onLeftSwipe:(UISwipeGestureRecognizer*)recognizerLeft
 {
-    if ([eventName.text isEqualToString:@""])
+    if(recognizerLeft.direction == UISwipeGestureRecognizerDirectionLeft)
     {
-        UIAlertView *error = [[UIAlertView alloc]initWithTitle:@"Error" message:@"Please enter event name" delegate:nil cancelButtonTitle:@"Fix it!" otherButtonTitles:nil];
-        [error show];
-    }else{
-    
-    // Setting my date strings
-    eventDate = picker.date;
-    picker = (UIDatePicker*)sender;
-    
-    // Formatting date... Thanks to the Mac Developer Library...
-    NSDateFormatter *formatDate = [[NSDateFormatter alloc] init];
-    [formatDate setDateStyle:NSDateFormatterMediumStyle];
-    [formatDate setTimeStyle:NSDateFormatterShortStyle];
-    
-    // Setting the Date string
-    NSString *formattedDateString = [formatDate stringFromDate:eventDate];
-    //NSLog(@"formattedDateString: %@", formattedDateString);
-    
-    // telling you that the event is saved in an alert
-    
-    UIAlertView *successAlert = [[UIAlertView alloc]initWithTitle:@"Saved" message:@"New event added." delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
-    [successAlert show];
-    
-    // sending the addEvent View away
-    [self dismissViewControllerAnimated:true completion:nil];
+        if ([eventName.text isEqualToString:@""])
+        {
+            UIAlertView *error = [[UIAlertView alloc]initWithTitle:@"Error" message:@"Please enter event name" delegate:nil cancelButtonTitle:@"Fix it!" otherButtonTitles:nil];
+            [error show];
+        }else{
+            
+            // Setting the Date string
+            [[data GetInfo] setEventDate:picker.date];
+            
+            // Saving to eventList
+            [[data GetInfo] setEventName:eventName.text];
+            
+            // trigger alert of saved event
+            [[data GetInfo] setEventNew:TRUE];
+            
+            UIAlertView *successAlert = [[UIAlertView alloc]initWithTitle:@"Saved" message:@"New event saved." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            [successAlert show];
+            
+            // sending the addEvent View away
+            [self dismissViewControllerAnimated:true completion:nil];
+        }
+        
     }
 }
 
@@ -89,11 +104,4 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)dealloc {
-    [keyboardLabel release];
-    [dateLabel release];
-    [swipeLeft release];
-    [close release];
-    [super dealloc];
-}
 @end

@@ -19,18 +19,21 @@
 - (void)viewDidLoad
 {
     [data CreateInfo];
-    // Makeing sure eventList shows default text.
+    // Making sure eventList shows default text...
     if([eventList.text isEqualToString:@""])
     {
         eventList.text = @"Dates shown here";
     }
     
-    //Loads saved events
+    //Loads saved event
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if (defaults != nil){
+    if (defaults != nil)
+    {
         NSString *eventText = [defaults objectForKey:@"Saved"];
+        
         eventList.text = eventText;
     }
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -41,19 +44,19 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewWillAppear:(BOOL)animated
+-(void)viewWillAppear:(BOOL)animated
 {
-    //check singleton for data, add to eventList if there is data.
-    if ([[data GetInfo] eventNew] == TRUE)
-    {
-        //Pull text from eventName
-        NSMutableString *viewText = [[NSMutableString alloc] initWithString:eventList.text];
+    // check singleton for data, add to eventList if there is new data
+    if ([[data GetInfo] eventNew] == TRUE) {
+        // Pulling text from eventName
+    	NSMutableString *textViewText = [[NSMutableString alloc] initWithString:eventList.text];
         
-        //Add event name and date to eventList
-        [viewText appendString:[[data GetInfo] createEvent]];
-        //Updates data to the eventList
+    	// Add event name and date to existing text from the eventList
+		[textViewText appendString:[[data GetInfo] createEvent]];
+    	// Updates data to the eventList
+    	eventList.text = textViewText;
+        
         [[data GetInfo] setEventNew:FALSE];
-         
     }
     
     //Right swipe gesture recognizer
@@ -62,11 +65,13 @@
     [swipeRight addGestureRecognizer:rightSwipe];
     
     [super viewWillAppear:animated];
+    
+    
 }
 
 -(IBAction)clearList:(id)sender
 {
-    eventList.text = @"Dates shown here.";
+    eventList.text = @"Dates shown here";
 }
 
 // Saves eventList
@@ -92,7 +97,6 @@
     }
     
 }
-
 
 -(void)onRightSwipe:(UISwipeGestureRecognizer*)recognizer
 {

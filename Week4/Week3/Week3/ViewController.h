@@ -17,11 +17,12 @@
     IBOutlet UIButton *save;
     UISwipeGestureRecognizer *rightSwipe;
     IBOutlet UILabel *swipeRight;
+    
 }
 
 // Saves eventList
 -(IBAction)onSave:(id)sender;
 
-//Clears eventList
+// Clears text view
 -(IBAction)clearList:(id)sender;
 @end
